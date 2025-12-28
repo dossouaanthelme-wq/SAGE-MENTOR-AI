@@ -29,4 +29,3 @@ if api_key:
         st.error(f"Erreur : {e}")
 else:
     st.info("Bienvenue ! Entre ta clé API à gauche.")
- 
