@@ -1,4 +1,4 @@
-[02:04, 28/12/2025] Fortune☝️: import streamlit as st
+ import streamlit as st
 import google.generativeai as genai
 
 st.set_page_config(page_title="Sage Mentor AI", page_icon="🌿")
