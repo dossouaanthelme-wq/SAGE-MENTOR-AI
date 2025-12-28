@@ -1,28 +1,3 @@
-[01:59, 28/12/2025] Fortune☝️: import streamlit as st
-import google.generativeai as genai
-
-# Configuration de l'app
-st.set_page_config(page_title="Sage Mentor AI", page_icon="🌿")
-st.title("🌿 Sage : Ton Mentor Personnel")
-
-# Barre latérale pour la clé API
-with st.sidebar:
-    st.header("Configuration")
-    api_key = st.text_input("Entre ta clé API Google :", type="password")
-
-if api_key:
-    try:
-        genai.configure(api_key=api_key)
-        # Utilisation du nom de modèle le plus stable
-        model = genai.GenerativeModel('gemini-1.5-flash')
-
-        if "messages" not in st.session_state:
-            st.session_state.messages = []
-
-        # Affichage de l'historique
-        for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                …
 [02:04, 28/12/2025] Fortune☝️: import streamlit as st
 import google.generativeai as genai
 
@@ -37,6 +12,31 @@ if api_key:
     try:
         genai.configure(api_key=api_key)
         # Utilisation du nom standard pour éviter l'erreur 404
+        model = genai.GenerativeModel('gemini-1.5-flash')
+
+        if "messages" not in st.session_state:
+            st.session_state.messages = []
+
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+
+        if prompt := st.chat_input("Comment puis-je …
+[02:13, 28/12/2025] Fortune☝️: import streamlit as st
+import google.generativeai as genai
+
+# Configuration de l'app
+st.set_page_config(page_title="Sage Mentor AI", page_icon="🌿")
+st.title("🌿 Sage : Ton Mentor Personnel")
+
+# Barre latérale pour la clé API
+with st.sidebar:
+    st.header("Configuration")
+    api_key = st.text_input("Entre ta clé API Google :", type="password")
+
+if api_key:
+    try:
+        genai.configure(api_key=api_key)
         model = genai.GenerativeModel('gemini-1.5-flash')
 
         if "messages" not in st.session_state:
