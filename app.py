@@ -29,7 +29,7 @@ if api_key:
             with st.chat_message("user"):
                 st.markdown(prompt)
             
-            response = model.generate_content(prompte)
+            response = model.generate_content(prompt)
             with st.chat_message("assistant"):
                 m.markdown(response.text)
                 st.session_state.messages.append({"role": "assistant", "content": response.text})
